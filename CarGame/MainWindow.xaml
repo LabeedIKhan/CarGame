@@ -1,0 +1,77 @@
+﻿<Window x:Class="CarGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarGame"
+        mc:Ignorable="d" ResizeMode="NoResize"  Left="10" Top="10"
+        Title="CarGame" Height="863.064" Width="783.49" KeyDown="Window_KeyDown" Background="Green">
+    <Grid>
+        <Button Content="Exit" x:Name="Exit" Margin="408,4,244.8,796.6" Click="Exit_Click" Background="SlateGray"></Button>
+        <Button Content="Start" x:Name="Start" Margin="23,4,631.8,796.6" Click="Start_Click" Background="SlateGray"></Button>
+        <Button Content="Restart" x:Name="ReStart" Margin="150,4,502.8,796.6" Click="ReStart_Click" Background="SlateGray"></Button>
+        <Button Content="Pause" x:Name="Pause" Margin="279,4,373.8,796.6" Click="Pause_Click"  Background="SlateGray"></Button>
+
+        <TextBox x:Name="ScoreBox" Background="Yellow" IsReadOnly="True" Margin="659,4,22.8,796.6"></TextBox>
+
+        <TextBox x:Name="SpeedBox" Background="Yellow" IsReadOnly="True" Margin="591,4,122.8,796.6"></TextBox>
+
+        <Border BorderBrush="Yellow" BorderThickness="5,5, 5, 5"  Background="Gray"  Padding="5" CornerRadius="15" Margin="23,42,22.8,22.6" ClipToBounds="True">
+
+            <Canvas x:Name="Road" Margin="0.4,0.4,0.6,-0.6">
+
+
+
+                <Rectangle x:Name="Mark1" Fill="WhiteSmoke" Width="8" Height="100" Canvas.Left="249" Canvas.Top="-85"/>
+                <Rectangle x:Name="Mark2" Fill="WhiteSmoke" Width="8" Height="100" Canvas.Left="249" Canvas.Top="100"/>
+                <Rectangle x:Name="Mark3" Fill="WhiteSmoke" Width="8" Height="100" Canvas.Left="249" Canvas.Top="300"/>
+                <Rectangle x:Name="Mark4" Fill="WhiteSmoke" Width="8" Height="100" Canvas.Left="249" Canvas.Top="500"/>
+                <Rectangle x:Name="Mark5" Fill="WhiteSmoke" Width="8" Height="100" Canvas.Left="249" Canvas.Top="700"/>
+
+                <Rectangle x:Name="Mark6" Fill="WhiteSmoke" Width="8" Height="100" Canvas.Left="449" Canvas.Top="-85"/>
+                <Rectangle x:Name="Mark7" Fill="WhiteSmoke" Width="8" Height="100" Canvas.Left="449" Canvas.Top="100"/>
+                <Rectangle x:Name="Mark8" Fill="WhiteSmoke" Width="8" Height="100" Canvas.Left="449" Canvas.Top="300"/>
+                <Rectangle x:Name="Mark9" Fill="WhiteSmoke" Width="8" Height="100" Canvas.Left="449" Canvas.Top="500"/>
+                <Rectangle x:Name="Mark10" Fill="WhiteSmoke" Width="8" Height="100" Canvas.Left="449" Canvas.Top="700"/>
+
+                <Rectangle Fill="WhiteSmoke" Width="7" Height="745" Canvas.Left="705"/>
+                <Rectangle Fill="WhiteSmoke" Width="8" Height="745" Canvas.Left="2"/>
+
+                <Image x:Name="Car1" Height="97" Width="49" Canvas.Left="310" Canvas.Top="426" Source="Car1.png"></Image>
+
+
+                <Image x:Name="EnemyType1No1" Height="100" Width="49" Canvas.Left="138" Canvas.Top="122" Source="EnemyCars.png" Stretch="Fill"></Image>
+                <Image x:Name="EnemyType1No2" Height="100" Width="48" Canvas.Left="371" Canvas.Top="198" Source="EnemyCars.png" Stretch="Fill"></Image>
+                <Image x:Name="EnemyType1No3" Height="100" Width="50" Canvas.Left="539" Canvas.Top="24" Source="EnemyCars.png" Stretch="Fill"></Image>
+                <Image x:Name="EnemyType1No4" Height="100" Width="47" Canvas.Left="312" Canvas.Top="554" Source="EnemyCars.png" Stretch="Fill"></Image>
+                <Image x:Name="EnemyType1No5" Height="100" Width="50" Canvas.Left="496" Canvas.Top="269" Source="EnemyCars.png" Stretch="Fill"></Image>
+
+                <Image x:Name="EnemyType2No1" Height="91" Width="51" Canvas.Left="457" Canvas.Top="458" Source="BadCar.jpg" Stretch="Fill"></Image>
+                <Image x:Name="EnemyType2No2" Height="93" Width="50" Canvas.Left="226" Canvas.Top="325" Source="BadCar.jpg" Stretch="Fill"></Image>
+
+                <Image x:Name="Truck1" Height="213" Width="58" Canvas.Left="64" Canvas.Top="244" Stretch="Fill" Source="RoadTruck.png"></Image>
+                <Image x:Name="Truck2" Height="213" Width="58" Canvas.Left="588" Canvas.Top="441" Stretch="Fill" Source="RoadTruck.png"></Image>
+
+
+
+                <Image x:Name="Stop1" Source="StopSign.png" Height="51" Width="85" Canvas.Left="64" Canvas.Top="10" ></Image>
+                <Image x:Name="Stop2" Source="StopSign.png" Height="51" Width="85" Canvas.Left="37" Canvas.Top="647" ></Image>
+                <Image x:Name="Stop3" Source="StopSign.png" Height="51" Width="85" Canvas.Left="588" Canvas.Top="325" ></Image>
+
+                <Image x:Name="Coins" Source="Coins.png" Height="35" Width="32" Canvas.Left="37" Canvas.Top="134" Stretch="Fill"></Image>
+                <Image x:Name="Coins1" Source="Coins.png" Height="36" Width="32" Canvas.Left="155" Canvas.Top="500" Stretch="Fill"></Image>
+                <Image x:Name="Coins2" Source="Coins.png" Height="35" Width="32" Canvas.Left="641" Canvas.Top="244" Stretch="Fill"></Image>
+                <Image x:Name="Coins3" Source="Coins.png" Height="36" Width="32" Canvas.Left="339" Canvas.Top="303" Stretch="Fill"></Image>
+                <Image x:Name="Coins4" Source="Coins.png" Height="33" Width="32" Canvas.Left="280" Canvas.Top="105" Stretch="Fill"/>
+
+                <Image x:Name="Crash" Source="CarWreck.png" Width="47" Height="30"></Image>
+
+                <Label x:Name="GameOver"  Content=" Game Over" Canvas.Left="226" Canvas.Top="373" Width="266" Height="61"
+                       FontSize="40" FontFamily="Verdana" Background="GreenYellow"></Label>
+            </Canvas>
+
+
+        </Border>
+
+    </Grid>
+</Window>
